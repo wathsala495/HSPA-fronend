@@ -1,0 +1,3 @@
+software testing is defined as an activity to check whether the actual result mathch the expected results and to ensure that the software system is defect free
+
+https://netexam.sliit.lk

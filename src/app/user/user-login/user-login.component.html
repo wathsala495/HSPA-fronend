@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="col-6 m-auto">
+    <div class="card m-auto">
+      <div class="card-header">Login</div>
+      <div class="card-body">
+        <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)" >
+          <div class="form-group col-12">
+            <label for="name" class="form-label" required ngModel  formControlName="userName">Name</label>
+            <input
+        type="text"
+        id="username"
+        name="userName"
+        class="form-control"
+        ngModel
+        required
+      />
+          </div>
+
+          <div class="form-group col-12">
+            <label for="passwrod" class="form-label" required ngModel  formControlName="password">Password</label>
+            <input
+            type="password"
+            id="password"
+            name="password"
+            class="form-control"
+            ngModel
+            required
+          />
+          </div>
+
+          <div class="form-group col-12" style="text-align: right">
+            <button type="submit" class="btn btn-primary me-2 my-2">
+             Login
+            </button>
+            <button type="reset" class="btn btn-secondary ml-2">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

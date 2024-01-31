@@ -1,0 +1,54 @@
+<label>Filter City:</label>
+<input [(ngModel)]="City">
+<button type="button" (click)="onCityFilter()">Search</button>
+<button type="button" (click)="onCityFilterClear()">Clear</button>&nbsp;
+<label>Sort by &nbsp;</label>
+<!--Method 1-->
+     <select [(ngModel)]="SortbyParam">
+    <option value="City">City</option>
+    <option value="Price">Price</option>
+
+</select>
+<button type="button" (click)="onSortDirection()">
+    <i *ngIf="SortDerection==='asc' " class="fas fa-sort-alpha-down"></i>
+    <i *ngIf="SortDerection==='desc'" class="fas fa-sort-alpha-up"></i>
+</button>
+
+<!--  Method 2
+    <select id="sortSelect" [(ngModel)]="sortOption" (change)="sortData()">
+    <option value="City">City</option>
+    <option value="Price">Price</option>
+  </select> -->
+
+
+
+<div class="row">
+    <div class="col-md-4 col-sm-2 "  *ngFor="let property of properties | filter :SearchCity:'City'|sort:[SortbyParam,SortDerection] ">
+        <app-property-card [properties] ="property"></app-property-card>
+        <br>
+    </div>
+</div>
+
+
+
+
+
+<!-- <input type="text" id="cityFilter" [(ngModel)]="cityFilter" />
+    cityFilter=filter
+<button (click)="applyFilter()">Search</button>
+<div class="row">
+    <div class="col-md-4 col-sm-2 "  *ngFor="let property of properties |  cityFilter: cityFilter|sort:['Price','desc'] ">
+        <app-property-card [properties] ="property"></app-property-card>
+        <br>
+    </div>
+</div> -->
+
+<!-- <input type="text" id="cityFilter" [(ngModel)]="cityFilter" />
+<button (click)="applyFilter()">Search</button>
+<div class="row">
+    <div class="col-md-4 col-sm-2 "  *ngFor="let property of properties   ">
+        <app-property-card [properties] ="property"></app-property-card>
+        <br>
+    </div>
+</div> -->
+

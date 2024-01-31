@@ -1,0 +1,44 @@
+<div class="card">
+  <div class="card-img-wrapper">
+    <img
+      *ngIf="properties.Image"
+      src="assets/images/{{ properties.Image }}.jpeg"
+      class="card-img-top propImg"
+      alt="..."
+    />
+    <img
+      *ngIf="!properties.Image"
+      src="assets/images/house_default.jpg"
+      class="card-img-top propImg"
+      alt="..."
+    />
+    <ul *ngIf="!hideIcons"  class="list-inline member-icons text-center animate">
+      <li class="list-inline-item">
+        <button
+          class="btn btn-primary"
+          routerLink="/property-detail/{{ properties.Id }}"
+        >
+          <i class="far fa-edit"></i>
+        </button>
+      </li>
+      <li class="list-inline-item">
+        <button class="btn btn-primary">
+          <i class="far fa-address-book"></i>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body p-1">
+     <h1 class="mb-0">{{properties.BHK}} BHK {{properties.pType}}</h1>
+     in {{properties.Name}}
+
+     <span *ngIf="properties.Name">,</span>
+     {{properties.City}}
+     <h6 class="mt-2">{{properties.FType}}
+     <span *ngIf="properties.FType !== 'Unfurnished'" >Furnished</span> | Ready to Move</h6>
+
+     <hr class="mt-0 mb-2">
+     <h6 class="mb-0">Price:<span class="font-highlight">{{properties.Price}} USD.</span>
+    Area:  <span class="font-highlight">{{properties.BuiltArea}} Sq Ft</span></h6>
+  </div>
+</div>

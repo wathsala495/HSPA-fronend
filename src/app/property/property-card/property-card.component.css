@@ -1,0 +1,58 @@
+.card{
+    min-height: 400px;
+}
+.card-body h1{
+    font-family:fantasy;
+    color: #0069d9;
+}
+.font-highlight{
+    font-style: italic;
+    color: red;
+}
+
+.propImg{
+    height: 250px;
+    overflow: hidden;
+}
+.card-img-wrapper{
+    overflow: hidden;
+    position: relative;
+}
+.card:hover img{
+    transform: scale(1.2,1.2);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+    height: 250px;
+    opacity: .5;
+}
+
+.card img{
+    transform: scale(1,1);
+    transition-duration: 500ms;
+    transition-timing-function: ease-out;
+}
+
+.member-icons{
+            /*position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5); 
+            color: white;
+            margin-left: auto;
+            margin-right: auto;*/
+            position: absolute;
+            bottom: -30%;
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+}
+.card-img-wrapper:hover .member-icons{
+    bottom: 0;
+    opacity: 1;
+}
+.animate{
+    transition: all 0.3s ease-in-out;
+}
